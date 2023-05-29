@@ -22,6 +22,7 @@ public class Topic {
 	@ManyToOne
 	@JoinColumn(name="key_course")
 	private Course courseObj;
+	
 	@OneToMany(mappedBy="topicObj")
 	private List<Study> study;
 	

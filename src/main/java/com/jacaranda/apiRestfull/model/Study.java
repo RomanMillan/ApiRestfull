@@ -15,77 +15,90 @@ public class Study {
 	@Id
 	@ManyToOne
 	@JoinColumn(name="key_user")
-	private String userObj;
+	private User userObj;
 	@Id
 	@ManyToOne
 	@JoinColumn(name="key_topic")
-	private String topicObj;
+	private Topic topicObj;
 	@Id
 	private String date_begin;
 	private String date_end;
 	private int score;
 	
 //	constructores
-	public Study(String userObj, String topicObj, String date_begin, String date_end, int score) {
-		super();
-		this.userObj = userObj;
-		this.topicObj = topicObj;
-		this.date_begin = date_begin;
-		this.date_end = date_end;
-		this.score = score;
-	}
+
+	
 
 	public Study() {
 		super();
 	}
 
 	
-//	getter and setter
-	public String getUserObj() {
+	public Study(User userObj, Topic topicObj, String date_begin, String date_end, int score) {
+		super();
+		this.userObj = userObj;
+		this.topicObj = topicObj;
+		this.date_begin = date_begin;
+		this.date_end = date_end;
+		this.score = score;
+	}
+
+
+	public User getUserObj() {
 		return userObj;
 	}
-
-	public void setUserObj(String userObj) {
+	
+	
+	public void setUserObj(User userObj) {
 		this.userObj = userObj;
 	}
-
-	public String getTopicObj() {
+	
+	
+	public Topic getTopicObj() {
 		return topicObj;
 	}
-
-	public void setTopicObj(String topicObj) {
+	
+	
+	public void setTopicObj(Topic topicObj) {
 		this.topicObj = topicObj;
 	}
-
+	
+	
 	public String getDate_begin() {
 		return date_begin;
 	}
-
+	
+	
 	public void setDate_begin(String date_begin) {
 		this.date_begin = date_begin;
 	}
-
+	
+	
 	public String getDate_end() {
 		return date_end;
 	}
-
+	
+	
 	public void setDate_end(String date_end) {
 		this.date_end = date_end;
 	}
-
+	
+	
 	public int getScore() {
 		return score;
 	}
-
+	
+	
 	public void setScore(int score) {
 		this.score = score;
 	}
 
-//	hashCode and Equals
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(date_begin, topicObj, userObj);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -99,6 +112,9 @@ public class Study {
 		return Objects.equals(date_begin, other.date_begin) && Objects.equals(topicObj, other.topicObj)
 				&& Objects.equals(userObj, other.userObj);
 	}
+	
+	
+		
 	
 	
 	
