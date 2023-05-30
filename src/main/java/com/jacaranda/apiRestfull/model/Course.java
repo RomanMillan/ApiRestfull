@@ -15,6 +15,8 @@ public class Course {
 	@Id
 	private String corsename;
 	private String description;
+	private int duration;
+	private int difficulty;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="courseObj")
@@ -25,13 +27,16 @@ public class Course {
 		super();
 	}
 
-	
-public Course(String corsename, String description, List<Topic> topic) {
-	super();
-	this.corsename = corsename;
-	this.description = description;
-	this.topic = topic;
-}
+
+	public Course(String corsename, String description, int duration, int difficulty, List<Topic> topic) {
+		super();
+		this.corsename = corsename;
+		this.description = description;
+		this.duration = duration;
+		this.difficulty = difficulty;
+		this.topic = topic;
+	}
+
 
 
 //	getter and setter
@@ -51,6 +56,26 @@ public Course(String corsename, String description, List<Topic> topic) {
 		this.description = description;
 	}
 	
+
+	public int getDuration() {
+		return duration;
+	}
+
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+
+	public int getDifficulty() {
+		return difficulty;
+	}
+
+
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
+	}
+
 
 	public List<Topic> getTopic() {
 		return topic;

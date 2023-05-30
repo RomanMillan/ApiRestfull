@@ -1,5 +1,6 @@
 package com.jacaranda.apiRestfull.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,8 @@ public class CourseController {
 //	obtiene todos los cursos
 	@GetMapping("cursos")
 	public List<Course> getCourses(){
-		return courseService.getCourses();
+		List<Course> courses =  courseService.getCourses();
+		return courses;
 	}
 	
 //	obtiene solo un curso

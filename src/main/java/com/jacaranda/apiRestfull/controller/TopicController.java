@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jacaranda.apiRestfull.model.Course;
 import com.jacaranda.apiRestfull.model.Topic;
+import com.jacaranda.apiRestfull.service.CourseService;
 import com.jacaranda.apiRestfull.service.TopicService;
 
 @RestController
@@ -20,6 +22,10 @@ public class TopicController {
 
 	@Autowired
 	TopicService topicService;
+	
+	@Autowired
+	CourseService courseService;
+	
 	
 //	obtiene todos los temas
 	@GetMapping("temas")
@@ -34,8 +40,10 @@ public class TopicController {
 	}
 	
 //	agrega un tema
-	@PostMapping("tema/add")
-	public Topic addTopics(@RequestBody Topic topic){
+	@PostMapping("tema/add") // ARREGLAR NO INSERTA EL OBJETO CURSO
+	public Topic addTopics(@RequestBody Topic topic, @PathVariable String coursename ){
+		Course c = courseService.getCourse(coursename);
+		topic.setCourseObj(c);
 		return topicService.addTopic(topic);
 	}
 	
