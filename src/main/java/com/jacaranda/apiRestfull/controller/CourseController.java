@@ -36,13 +36,13 @@ public class CourseController {
 	}
 	
 //	agrega un curso
-	@PostMapping("curso/add")
+	@PostMapping("curso")
 	public Course addCourse(@RequestBody Course course){
 		return courseService.addCourse(course);
 	}
 	
 //	actualiza un curso
-	@PutMapping("curso/update/{corsename}")
+	@PutMapping("curso/{corsename}")
 	public ResponseEntity<Course> updateCourse(@PathVariable String corsename, @RequestBody Course course){
 		if(courseService.getCourse(corsename) != null) {			
 			Course courseUpdate = courseService.addCourse(course);
@@ -53,7 +53,7 @@ public class CourseController {
 	}
 	
 //	borra un curso
-	@DeleteMapping("curso/delete")
+	@DeleteMapping("curso/")
 	public void deleteCourse(@RequestBody Course course){
 		courseService.deleteCourse(course);
 	}

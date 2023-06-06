@@ -22,7 +22,7 @@ CREATE TABLE proyectoRestMillanRoman.course(
 	corsename VARCHAR(32),
 	description VARCHAR(100),
 	duration int(3),
-	difficulty int(1)
+	difficulty int(1),
 	CONSTRAINT PK_course PRIMARY KEY(corsename)
 );
 

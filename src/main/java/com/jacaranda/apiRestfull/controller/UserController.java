@@ -35,13 +35,13 @@ public class UserController {
 	}
 	
 //	agrega un usuario
-	@PostMapping("usuario/add")
+	@PostMapping("usuario")
 	public User addUser(@RequestBody User user){
 		return userService.addUser(user);
 	}
 	
 //	actualiza un usuario
-	@PutMapping("usuario/update/{username}")
+	@PutMapping("usuario/{username}")
 	public ResponseEntity<User> updateUser(@PathVariable String username, @RequestBody User user){
 		if(userService.getUser(username) != null) {			
 			User userUpdate = userService.addUser(user);
@@ -52,7 +52,7 @@ public class UserController {
 	}
 	
 //	borra un usuario
-	@DeleteMapping("usuario/delete")
+	@DeleteMapping("usuario")
 	public void deleteUser(@RequestBody User user){
 		userService.deleteUser(user);
 	}

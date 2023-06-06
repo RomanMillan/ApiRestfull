@@ -40,15 +40,13 @@ public class TopicController {
 	}
 	
 //	agrega un tema
-	@PostMapping("tema/add") // ARREGLAR NO INSERTA EL OBJETO CURSO
-	public Topic addTopics(@RequestBody Topic topic, @PathVariable String coursename ){
-		Course c = courseService.getCourse(coursename);
-		topic.setCourseObj(c);
+	@PostMapping("tema")
+	public Topic addTopics(@RequestBody Topic topic ){
 		return topicService.addTopic(topic);
 	}
 	
 //	actualiza un tema
-	@PutMapping("tema/update/{topicname}")
+	@PutMapping("tema/{topicname}")
 	public ResponseEntity<Topic> updateTopics(@PathVariable String topicname, @RequestBody Topic topic){
 		if(topicService.getTopic(topicname) != null) {			
 			Topic topicUpdate = topicService.addTopic(topic);
@@ -59,7 +57,7 @@ public class TopicController {
 	}
 	
 //	borra un tema
-	@DeleteMapping("tema/delete")
+	@DeleteMapping("tema")
 	public void deleteTopics(@RequestBody Topic topic){
 		 topicService.deleteTopic(topic);
 	}
