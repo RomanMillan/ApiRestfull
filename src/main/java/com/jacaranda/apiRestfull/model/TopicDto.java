@@ -1,8 +1,5 @@
 package com.jacaranda.apiRestfull.model;
 
-import java.util.List;
-import java.util.Objects;
-
 
 
 public class TopicDto {

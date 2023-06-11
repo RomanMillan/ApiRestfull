@@ -31,6 +31,6 @@ public class TopicService {
 	
 //	borrar un tema
 	public void deleteTopic(Topic topic) {
-		 topicRespository.delete(topic);;
+		 topicRespository.delete(topic);
 	}
 }

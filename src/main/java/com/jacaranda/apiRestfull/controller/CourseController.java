@@ -1,10 +1,10 @@
 package com.jacaranda.apiRestfull.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jacaranda.apiRestfull.model.Course;
+import com.jacaranda.apiRestfull.model.Topic;
 import com.jacaranda.apiRestfull.service.CourseService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class CourseController {
 
 	@Autowired
@@ -33,6 +35,17 @@ public class CourseController {
 	@GetMapping("curso/{corsename}")
 	public Course getCourse(@PathVariable String corsename){
 		return courseService.getCourse(corsename);
+	}
+	
+//	obtine los temas de un curso CORREGIR ESTO NO FUNCIONA
+	@GetMapping("listaTemas/{corsename}")
+	public List<Topic> getTopicsOfCourses(@PathVariable String corsename){
+		Course course = courseService.getCourse(corsename);
+		List<Topic> listTopics = null; //NULO me da una eception al agregar un topic
+		for (Topic topic : course.getTopic()) {
+			listTopics.add(topic);
+		}
+		return listTopics;
 	}
 	
 //	agrega un curso
@@ -53,8 +66,9 @@ public class CourseController {
 	}
 	
 //	borra un curso
-	@DeleteMapping("curso/")
-	public void deleteCourse(@RequestBody Course course){
+	@DeleteMapping("curso/{corsename}")
+	public void deleteCourse(@PathVariable String corsename){
+		Course course = courseService.getCourse(corsename);
 		courseService.deleteCourse(course);
 	}
 	

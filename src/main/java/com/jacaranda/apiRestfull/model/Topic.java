@@ -3,12 +3,15 @@ package com.jacaranda.apiRestfull.model;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
 
 @Entity
 @Table(name="topicdb")
@@ -19,10 +22,13 @@ public class Topic {
 	private String content;
 	private int pages;
 	private double price;
+	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="key_course")
 	private Course courseObj;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="topicObj")
 	private List<Study> study;
 	

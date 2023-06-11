@@ -1,0 +1,151 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "API RestFull",
+    "dateExported": "2023-06-11T19:56:50.591Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "13025531-56b2-4977-9a5b-844a8cd41abe",
+            "name": "Course",
+            "containerId": "",
+            "created": "2023-05-25T12:34:25.379Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "0c52baa6-beca-48a0-b99e-9f1fb6825c39",
+            "name": "Topic",
+            "containerId": "",
+            "created": "2023-05-26T09:57:08.054Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "47ece05f-ee99-4cbe-b770-4ab043055e8f",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "13025531-56b2-4977-9a5b-844a8cd41abe",
+            "name": "get all topics",
+            "url": "http://localhost:8080/temas",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-25T12:34:57.084Z",
+            "modified": "2023-06-09T14:35:28.387Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "33d28059-8e3c-4561-b95a-93def4fd51e3",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "0c52baa6-beca-48a0-b99e-9f1fb6825c39",
+            "name": "Obtener todos los temas",
+            "url": "http://localhost:8080/temas",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-05-25T19:08:35.144Z",
+            "modified": "2023-05-26T09:57:49.580Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2d664b27-4d84-458d-8bd3-64bd363c5717",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "0c52baa6-beca-48a0-b99e-9f1fb6825c39",
+            "name": "Obtener un tema",
+            "url": "http://localhost:8080/tema/anatomía 11",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-26T09:57:31.268Z",
+            "modified": "2023-06-11T11:15:43.201Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fc61f684-af13-4a6f-85a3-a2b801cc0e0b",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "0c52baa6-beca-48a0-b99e-9f1fb6825c39",
+            "name": "añadir un tema",
+            "url": "http://localhost:8080/tema",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-05-26T10:02:31.696Z",
+            "modified": "2023-06-11T17:42:53.622Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"topicname\": \"Anatomía 5\",\n  \"content\": \"dis parturient montes nascetur ridiculus\",\n  \"pages\": 200,\n  \"price\": 6.0,\n  \"course\" : \"Anatomía\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "01259971-49d5-4799-a99e-d79606a27cdc",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "0c52baa6-beca-48a0-b99e-9f1fb6825c39",
+            "name": "actualizar tema",
+            "url": "http://localhost:8080/tema/Anatomía 5",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-05-26T10:27:25.630Z",
+            "modified": "2023-06-11T17:43:30.969Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"topicname\": \"Anatomía 5\",\n  \"content\": \"dis parturient montes nascetur ridiculus\",\n  \"pages\": 500,\n  \"price\": 6.0,\n  \"course\" : \"Anatomía\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "20601a07-2bfd-46e5-94c0-bd7f7b45456b",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "13025531-56b2-4977-9a5b-844a8cd41abe",
+            "name": "add course",
+            "url": "http://localhost:8080/tema",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-06-09T17:30:59.773Z",
+            "modified": "2023-06-09T17:46:13.405Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n    \"topicname\": \"Anatomía 7\",\n    \"content\": \"augue aliquam erat volutpat in congue\",\n    \"pages\": 945,\n    \"price\": 22.0,\n    \"course\": \"Anatomía\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "419eaeb9-b720-42a5-aa4a-71bde2a60ce5",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "0c52baa6-beca-48a0-b99e-9f1fb6825c39",
+            "name": "delete topic",
+            "url": "http://localhost:8080/tema/Anatomía 11",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-06-11T11:45:20.184Z",
+            "modified": "2023-06-11T11:45:43.650Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ef42a99d-4f67-4200-80de-e19055581462",
+            "colId": "027f7240-2956-4b80-9074-239ac2e9338a",
+            "containerId": "13025531-56b2-4977-9a5b-844a8cd41abe",
+            "name": "getTopicsOfCourse",
+            "url": "http://localhost:8080/listaTemas/Anatomía",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-06-11T19:16:30.300Z",
+            "modified": "2023-06-11T19:17:16.925Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
