@@ -41,7 +41,7 @@ public class CourseController {
 		return courseService.getCourse(corsename);
 	}
 	
-//	obtine los temas de un curso CORREGIR ESTO NO FUNCIONA
+//	obtine los temas de un curso
 	@GetMapping("listaTemas/{corsename}")
 	public List<Topic> getTopicsOfCourses(@PathVariable String corsename){
 		Course course = courseService.getCourse(corsename);
