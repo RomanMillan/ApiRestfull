@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jacaranda.apiRestfull.model.Course;
 import com.jacaranda.apiRestfull.model.Topic;
 import com.jacaranda.apiRestfull.service.CourseService;
+import com.jacaranda.apiRestfull.service.TopicService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -23,6 +24,9 @@ public class CourseController {
 
 	@Autowired
 	CourseService courseService;
+	
+	@Autowired
+	TopicService topicService;
 	
 //	obtiene todos los cursos
 	@GetMapping("cursos")
@@ -41,10 +45,7 @@ public class CourseController {
 	@GetMapping("listaTemas/{corsename}")
 	public List<Topic> getTopicsOfCourses(@PathVariable String corsename){
 		Course course = courseService.getCourse(corsename);
-		List<Topic> listTopics = null; //NULO me da una eception al agregar un topic
-		for (Topic topic : course.getTopic()) {
-			listTopics.add(topic);
-		}
+		List<Topic> listTopics =  topicService.getTopicsCourse(course);
 		return listTopics;
 	}
 	
